@@ -1,0 +1,783 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&Iacute;A CERO &mdash; El 11 de Septiembre y la Transformaci&oacute;n del Mundo | Gimnasio Vallegrande</title>
+  
+  <!-- Metadatos pedagogicos, institucionales y SEO -->
+  <meta name="description" content="Micrositio educativo interdisciplinario del Gimnasio Vallegrande sobre los atentados del 11 de septiembre de 2001. Exposici&oacute;n digital que explora el evento desde la historia, ingenier&iacute;a, matem&aacute;ticas, ciencias naturales, econom&iacute;a, geograf&iacute;a, tecnolog&iacute;a y sociedad.">
+  <meta name="keywords" content="Gimnasio Vallegrande, Dia Cero, 11 de septiembre, 9/11, World Trade Center, Torres Gemelas, educacion historica, ingenieria estructural, ciencias ambientales, economia global">
+  <meta name="author" content="Proyecto de Investigaci&oacute;n &mdash; Gimnasio Vallegrande">
+  <meta name="theme-color" content="#121e31">
+
+  <!-- Open Graph para difusion academica -->
+  <meta property="og:title" content="D&Iacute;A CERO &mdash; El 11 de Septiembre y la Transformaci&oacute;n del Mundo | Gimnasio Vallegrande">
+  <meta property="og:description" content="Exposici&oacute;n digital interactiva y rigurosa: c&oacute;mo un solo d&iacute;a transform&oacute; la historia, la arquitectura, la ciencia y la sociedad global.">
+  <meta property="og:type" content="website">
+
+  <!-- Tipografias de Google Fonts: Cinzel, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de progreso de lectura superior -->
+  <div id="scroll-progress" role="progressbar" aria-label="Progreso de navegaci&oacute;n del micrositio" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- NAVEGACION SUPERIOR DISCRETA Y PERSISTENTE -->
+  <header class="main-header" id="main-header">
+    <a href="#portada" class="brand-logo" aria-label="Volver al inicio de DIA CERO">
+      <div class="brand-symbol">0</div>
+      <div class="brand-text">
+        <span class="brand-institution">GIMNASIO VALLEGRANDE</span>
+        <span class="brand-title">D&Iacute;A CERO</span>
+      </div>
+    </a>
+
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Abrir men&uacute; de navegaci&oacute;n" aria-expanded="false" aria-controls="nav-links">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <nav aria-label="Navegaci&oacute;n principal del micrositio">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#portada" class="nav-link active">PORTADA</a></li>
+        <li><a href="#antes-despues" class="nav-link">ANTES Y DESPU&Eacute;S</a></li>
+        <li><a href="#el-ataque" class="nav-link">EL ATAQUE</a></li>
+        <li><a href="#las-torres" class="nav-link">LAS TORRES</a></li>
+        <li><a href="#mundo-despues" class="nav-link">EL MUNDO DESPU&Eacute;S</a></li>
+        <li><a href="#humaniza" class="nav-link">REFLEXI&Oacute;N</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- SECCION 1: PORTADA (HERO SCREEN) -->
+    <section class="hero-section" id="portada" aria-label="Portada institucional de DIA CERO">
+      <canvas id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-background-media" aria-hidden="true">
+        <img 
+          src="images/wtc-aerial-2001.jpg" 
+          alt="Fotograf&iacute;a panor&aacute;mica del Bajo Manhattan y las Torres Gemelas del World Trade Center en marzo de 2001"
+          class="hero-bg-img"
+          loading="eager"
+          onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='wtc-aerial-2001.jpg';}else{this.style.display='none'; this.nextElementSibling.style.display='flex';}"
+        >
+        <div class="img-fallback-card" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+          <p>Manhattan y World Trade Center &bull; Vista Panor&aacute;mica Hist&oacute;rica</p>
+        </div>
+      </div>
+
+      <!-- Overlay suave y translucido para garantizar visibilidad nitida -->
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-institutional-badge">
+          <span class="inst-eyebrow">PROYECTO DE INVESTIGACI&Oacute;N</span>
+          <span class="inst-divider" aria-hidden="true">&bull;</span>
+          <span class="inst-name">GIMNASIO VALLEGRANDE</span>
+        </div>
+
+        <h1 class="hero-main-title">
+          <span>D&Iacute;A CERO</span>
+        </h1>
+
+        <p class="hero-subtitle">El 11 de Septiembre y la Transformaci&oacute;n del Mundo</p>
+
+        <div class="hero-quote-box">
+          <p class="hero-quote-text">
+            &ldquo;Un d&iacute;a cambi&oacute; la historia.&rdquo;
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#antes-despues" class="btn-primary" id="btn-explore">
+            <span>EXPLORAR LA HISTORIA</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+          </a>
+          <a href="#las-torres" class="btn-secondary">
+            <span>LAS TORRES</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <a href="#antes-despues" class="hero-scroll-indicator" aria-label="Desplazarse a la siguiente secci&oacute;n">
+        <span class="indicator-mouse"><span class="indicator-wheel"></span></span>
+        <span class="indicator-text">Comenzar recorrido</span>
+      </a>
+    </section>
+
+    <!-- SECCION 2: ANTES Y DESPUES -->
+    <section class="section-padding before-after-section" id="antes-despues" aria-labelledby="heading-antes-despues">
+      <div class="container">
+        <header class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Dicotom&iacute;a Hist&oacute;rica</span>
+          <h2 class="section-title" id="heading-antes-despues">ANTES Y DESPU&Eacute;S</h2>
+          <p class="section-desc">Un d&iacute;a que dividi&oacute; dos &eacute;pocas. C&oacute;mo la percepci&oacute;n de seguridad, el comercio y el orden mundial se transformaron en pocas horas.</p>
+        </header>
+
+        <div class="comparison-grid">
+          <!-- Tarjeta ANTES: 10 DE SEPTIEMBRE DE 2001 -->
+          <article class="comparison-card before-card reveal-on-scroll" aria-labelledby="title-card-antes">
+            <div class="card-media-wrapper">
+              <img 
+                src="images/wtc-1995.jpg" 
+                alt="Fotograf&iacute;a hist&oacute;rica del World Trade Center antes del 11 de septiembre" 
+                class="card-historical-img"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="img-fallback-card" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                <p>Skyline de Nueva York &bull; Era Pre-11-S</p>
+              </div>
+              <div class="card-date-badge">10 DE SEPTIEMBRE DE 2001</div>
+            </div>
+
+            <div class="card-content-area">
+              <div class="card-header-badge">
+                <span class="tag-badge blue">Pre-Atentados</span>
+              </div>
+
+              <h3 class="card-era-title" id="title-card-antes">ANTES</h3>
+
+              <ul class="comparison-feature-list">
+                <li class="comparison-feature-item">
+                  <div class="feature-icon-wrapper" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Globalizaci&oacute;n</h4>
+                    <p>Fronteras fluidas, movilidad a&eacute;rea sin filtros extremos y confianza internacional.</p>
+                  </div>
+                </li>
+
+                <li class="comparison-feature-item">
+                  <div class="feature-icon-wrapper" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Comercio</h4>
+                    <p>Sede financiera de 430 compa&ntilde;&iacute;as multinacionales de 26 pa&iacute;ses en el WTC.</p>
+                  </div>
+                </li>
+
+                <li class="comparison-feature-item">
+                  <div class="feature-icon-wrapper" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Nueva York como Centro Financiero</h4>
+                    <p>50,000 trabajadores diarios y el coraz&oacute;n del intercambio econ&oacute;mico mundial.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Tarjeta DESPUES: 11 DE SEPTIEMBRE DE 2001 -> NUEVO MUNDO -->
+          <article class="comparison-card after-card reveal-on-scroll" aria-labelledby="title-card-despues">
+            <div class="card-media-wrapper">
+              <img 
+                src="images/pentagon-aerial.jpg" 
+                alt="Fotograf&iacute;a a&eacute;rea de los da&ntilde;os estructurales y transformaci&oacute;n de la seguridad tras el 11 de septiembre" 
+                class="card-historical-img"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="img-fallback-card" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <p>Nuevo Paradigma de Seguridad Global</p>
+              </div>
+              <div class="card-date-badge accent">DESPU&Eacute;S DEL 11 DE SEPTIEMBRE</div>
+            </div>
+
+            <div class="card-content-area">
+              <div class="card-header-badge">
+                <span class="tag-badge red">Nuevo Paradigma</span>
+              </div>
+
+              <h3 class="card-era-title" id="title-card-despues">DESPU&Eacute;S</h3>
+
+              <ul class="comparison-feature-list">
+                <li class="comparison-feature-item">
+                  <div class="feature-icon-wrapper" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Seguridad</h4>
+                    <p>Creaci&oacute;n de la TSA, blindaje de cabinas y protocolos de control biom&eacute;trico.</p>
+                  </div>
+                </li>
+
+                <li class="comparison-feature-item">
+                  <div class="feature-icon-wrapper" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon></svg>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Geopol&iacute;tica</h4>
+                    <p>Doctrina de guerra preventiva y activaci&oacute;n hist&oacute;rica del Art&iacute;culo 5 de la OTAN.</p>
+                  </div>
+                </li>
+
+                <li class="comparison-feature-item">
+                  <div class="feature-icon-wrapper" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Vigilancia</h4>
+                    <p>Aprobaci&oacute;n de la Ley Patriota (USA PATRIOT Act) y recolecci&oacute;n masiva de metadatos.</p>
+                  </div>
+                </li>
+
+                <li class="comparison-feature-item">
+                  <div class="feature-icon-wrapper" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Cambios Internacionales</h4>
+                    <p>Reestructuraci&oacute;n de la inteligencia global y dos d&eacute;cadas de conflicto en Oriente Medio.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- SECCION 3: EL ATAQUE Y LOS CUATRO VUELOS -->
+    <section class="section-padding attack-section" id="el-ataque" aria-labelledby="heading-ataque">
+      <div class="container">
+        <header class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Cartograf&iacute;a y Trayectorias</span>
+          <h2 class="section-title" id="heading-ataque">EL ATAQUE</h2>
+          <blockquote class="section-lead-quote">
+            &ldquo;Cuatro vuelos. Tres lugares. Un acontecimiento que transform&oacute; el mundo.&rdquo;
+          </blockquote>
+        </header>
+
+        <!-- MAPA GRANDE DE LAS RUTAS -->
+        <div class="map-card-container reveal-on-scroll">
+          <div class="map-controls-bar">
+            <div class="map-legend">
+              <span class="legend-item">
+                <span class="legend-color-dot dot-aa11" aria-hidden="true"></span>
+                <span>AA 11 (Torre Norte)</span>
+              </span>
+              <span class="legend-item">
+                <span class="legend-color-dot dot-ua175" aria-hidden="true"></span>
+                <span>UA 175 (Torre Sur)</span>
+              </span>
+              <span class="legend-item">
+                <span class="legend-color-dot dot-aa77" aria-hidden="true"></span>
+                <span>AA 77 (El Pent&aacute;gono)</span>
+              </span>
+              <span class="legend-item">
+                <span class="legend-color-dot dot-ua93" aria-hidden="true"></span>
+                <span>UA 93 (Shanksville)</span>
+              </span>
+            </div>
+
+            <div class="map-filter-buttons" role="group" aria-label="Filtrar trayectorias por vuelo">
+              <button class="btn-map-filter active" data-map-filter="all">Todas las Rutas</button>
+              <button class="btn-map-filter" data-map-filter="aa11">Vuelo 11</button>
+              <button class="btn-map-filter" data-map-filter="ua175">Vuelo 175</button>
+              <button class="btn-map-filter" data-map-filter="aa77">Vuelo 77</button>
+              <button class="btn-map-filter" data-map-filter="ua93">Vuelo 93</button>
+            </div>
+          </div>
+
+          <div class="interactive-svg-map-wrapper">
+            <!-- Tooltip flotante interactivo con Recurso Visual -->
+            <div class="map-point-tooltip" id="map-point-tooltip" role="dialog" aria-hidden="true">
+              <div class="tooltip-header">
+                <h4 class="tooltip-title" id="tooltip-title">Punto geogr&aacute;fico</h4>
+                <button class="tooltip-close-btn" id="tooltip-close-btn" aria-label="Cerrar ficha">&times;</button>
+              </div>
+              <span class="tooltip-badge" id="tooltip-badge">Relevancia Hist&oacute;rica</span>
+              <div class="tooltip-media-box" id="tooltip-media-box"></div>
+              <p class="tooltip-desc" id="tooltip-desc">Descripci&oacute;n contextual del lugar.</p>
+            </div>
+
+            <svg class="svg-map-viewport" viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa cartografico con rutas aereas del 11 de septiembre">
+              <defs>
+                <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <linearGradient id="route-aa11" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ef4444" stop-opacity="0.95" />
+                  <stop offset="100%" stop-color="#b91c1c" stop-opacity="0.8" />
+                </linearGradient>
+                <linearGradient id="route-ua175" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.95" />
+                  <stop offset="100%" stop-color="#ea580c" stop-opacity="0.8" />
+                </linearGradient>
+                <linearGradient id="route-aa77" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95" />
+                  <stop offset="100%" stop-color="#0284c7" stop-opacity="0.8" />
+                </linearGradient>
+                <linearGradient id="route-ua93" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#c084fc" stop-opacity="0.95" />
+                  <stop offset="100%" stop-color="#9333ea" stop-opacity="0.8" />
+                </linearGradient>
+              </defs>
+
+              <g stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3,6" aria-hidden="true">
+                <line x1="100" y1="50" x2="100" y2="500" />
+                <line x1="250" y1="50" x2="250" y2="500" />
+                <line x1="400" y1="50" x2="400" y2="500" />
+                <line x1="550" y1="50" x2="550" y2="500" />
+                <line x1="700" y1="50" x2="700" y2="500" />
+                <line x1="850" y1="50" x2="850" y2="500" />
+                <line x1="50" y1="120" x2="950" y2="120" />
+                <line x1="50" y1="240" x2="950" y2="240" />
+                <line x1="50" y1="360" x2="950" y2="360" />
+                <line x1="50" y1="460" x2="950" y2="460" />
+              </g>
+
+              <path class="map-continent-outline" d="M 120 160 Q 180 140 280 160 T 450 170 T 620 180 T 780 150 Q 860 130 910 180 Q 940 210 930 250 Q 900 300 870 330 T 840 430 Q 770 450 670 430 T 500 480 Q 420 460 350 410 T 220 380 Q 140 370 110 320 T 120 160 Z" fill="#152338" stroke="rgba(255,255,255,0.18)" stroke-width="1.6" />
+
+              <g stroke="rgba(255,255,255,0.18)" stroke-width="1.2" stroke-dasharray="4,8" aria-hidden="true">
+                <path d="M 870 190 Q 520 280 180 340" />
+                <path d="M 850 195 Q 500 240 150 260" />
+              </g>
+
+              <path id="path-aa11" class="flight-flightpath" d="M 890 170 Q 840 140 820 170 L 870 200" fill="none" stroke="url(#route-aa11)" stroke-width="3.5" stroke-linecap="round" filter="url(#glow-red)" />
+              <path id="path-ua175" class="flight-flightpath" d="M 890 170 Q 820 180 810 230 Q 840 240 870 200" fill="none" stroke="url(#route-ua175)" stroke-width="3.5" stroke-linecap="round" />
+              <path id="path-aa77" class="flight-flightpath" d="M 830 230 Q 730 220 670 250 Q 720 290 825 240" fill="none" stroke="url(#route-aa77)" stroke-width="3.5" stroke-linecap="round" filter="url(#glow-blue)" />
+              <path id="path-ua93" class="flight-flightpath" d="M 865 195 Q 750 210 680 230 Q 730 250 780 235" fill="none" stroke="url(#route-ua93)" stroke-width="3.5" stroke-linecap="round" />
+
+              <!-- Nodos interactivos -->
+              <g class="map-node" data-loc="boston" tabindex="0" role="button" aria-label="Boston: Aeropuerto Logan">
+                <circle cx="890" cy="170" r="14" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1.8" />
+                <circle cx="890" cy="170" r="5" fill="#ffffff" />
+                <text x="908" y="166" fill="#e2e8f0" font-size="12" font-weight="600" font-family="'Inter', sans-serif">Boston (BOS)</text>
+                <text x="908" y="180" fill="#94a3b8" font-size="10" font-family="'JetBrains Mono', monospace">Salida AA11 &amp; UA175</text>
+              </g>
+
+              <g class="map-node" data-loc="newark" tabindex="0" role="button" aria-label="Newark: Aeropuerto Newark Liberty">
+                <circle cx="865" cy="195" r="12" fill="rgba(192,132,252,0.2)" stroke="#c084fc" stroke-width="1.8" />
+                <circle cx="865" cy="195" r="4.5" fill="#ffffff" />
+                <text x="880" y="208" fill="#e2e8f0" font-size="12" font-weight="600" font-family="'Inter', sans-serif">Newark (EWR)</text>
+              </g>
+
+              <g class="map-node" data-loc="nyc" tabindex="0" role="button" aria-label="Nueva York: World Trade Center">
+                <circle cx="870" cy="200" r="20" fill="rgba(220,38,38,0.3)" stroke="#dc2626" stroke-width="2.2" class="node-pulse" />
+                <circle cx="870" cy="200" r="7" fill="#ef4444" />
+                <text x="760" y="195" fill="#ffffff" font-size="13" font-weight="700" font-family="'Inter', sans-serif">Nueva York (WTC)</text>
+                <text x="755" y="210" fill="#fca5a5" font-size="10" font-family="'JetBrains Mono', monospace">Impactos 08:46 y 09:03</text>
+              </g>
+
+              <g class="map-node" data-loc="pentagon" tabindex="0" role="button" aria-label="Washington: El Pentagono y Dulles">
+                <circle cx="825" cy="240" r="16" fill="rgba(56,189,248,0.25)" stroke="#38bdf8" stroke-width="2" />
+                <circle cx="825" cy="240" r="6" fill="#38bdf8" />
+                <text x="844" y="250" fill="#ffffff" font-size="12" font-weight="700" font-family="'Inter', sans-serif">El Pent&aacute;gono / Dulles</text>
+                <text x="844" y="264" fill="#bae6fd" font-size="10" font-family="'JetBrains Mono', monospace">Impacto AA77 &bull; 09:37</text>
+              </g>
+
+              <g class="map-node" data-loc="shanksville" tabindex="0" role="button" aria-label="Shanksville: Caida del Vuelo 93">
+                <circle cx="780" cy="235" r="15" fill="rgba(192,132,252,0.25)" stroke="#c084fc" stroke-width="2" />
+                <circle cx="780" cy="235" r="5.5" fill="#c084fc" />
+                <text x="680" y="225" fill="#ffffff" font-size="12" font-weight="700" font-family="'Inter', sans-serif">Shanksville, PA</text>
+                <text x="680" y="240" fill="#e9d5ff" font-size="10" font-family="'JetBrains Mono', monospace">Ca&iacute;da UA93 &bull; 10:03</text>
+              </g>
+
+              <g class="map-node" data-loc="lax" tabindex="0" role="button" aria-label="Los Angeles: Aeropuerto LAX">
+                <circle cx="180" cy="340" r="13" fill="rgba(255,255,255,0.1)" stroke="#cbd5e1" stroke-width="1.5" />
+                <circle cx="180" cy="340" r="4.5" fill="#ffffff" />
+                <text x="110" y="370" fill="#e2e8f0" font-size="12" font-weight="600" font-family="'Inter', sans-serif">Los &Aacute;ngeles (LAX)</text>
+                <text x="100" y="385" fill="#94a3b8" font-size="10" font-family="'JetBrains Mono', monospace">Destino AA11, UA175, AA77</text>
+              </g>
+
+              <g class="map-node" data-loc="sfo" tabindex="0" role="button" aria-label="San Francisco: Aeropuerto SFO">
+                <circle cx="150" cy="260" r="13" fill="rgba(255,255,255,0.1)" stroke="#cbd5e1" stroke-width="1.5" />
+                <circle cx="150" cy="260" r="4.5" fill="#ffffff" />
+                <text x="75" y="250" fill="#e2e8f0" font-size="12" font-weight="600" font-family="'Inter', sans-serif">San Francisco (SFO)</text>
+                <text x="85" y="265" fill="#94a3b8" font-size="10" font-family="'JetBrains Mono', monospace">Destino UA93</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- CUATRO ELEMENTOS PEQUEÑOS DE LOS VUELOS -->
+        <div class="flights-mini-grid reveal-on-scroll">
+          <!-- VUELO 1: AA11 -->
+          <article class="flight-mini-card" data-flight="aa11">
+            <div class="flight-mini-header">
+              <span class="flight-mini-badge aa11">AA 11 &bull; Boeing 767</span>
+            </div>
+            <h3 class="flight-mini-title">American Airlines 11</h3>
+            <div class="flight-mini-route">Boston (BOS) &rarr; Los &Aacute;ngeles (LAX)</div>
+            <p class="flight-mini-fact">Impacto en la Torre Norte (WTC 1) a las 08:46 &bull; 92 personas a bordo.</p>
+            <button class="btn-flight-inspect btn-mini-inspect" data-flight="aa11" aria-label="Ver informaci&oacute;n del vuelo AA11">
+              <span>Ficha del vuelo &rarr;</span>
+            </button>
+          </article>
+
+          <!-- VUELO 2: UA175 -->
+          <article class="flight-mini-card" data-flight="ua175">
+            <div class="flight-mini-header">
+              <span class="flight-mini-badge ua175">UA 175 &bull; Boeing 767</span>
+            </div>
+            <h3 class="flight-mini-title">United Airlines 175</h3>
+            <div class="flight-mini-route">Boston (BOS) &rarr; Los &Aacute;ngeles (LAX)</div>
+            <p class="flight-mini-fact">Impacto en la Torre Sur (WTC 2) a las 09:03 &bull; 65 personas a bordo.</p>
+            <button class="btn-flight-inspect btn-mini-inspect" data-flight="ua175" aria-label="Ver informaci&oacute;n del vuelo UA175">
+              <span>Ficha del vuelo &rarr;</span>
+            </button>
+          </article>
+
+          <!-- VUELO 3: AA77 -->
+          <article class="flight-mini-card" data-flight="aa77">
+            <div class="flight-mini-header">
+              <span class="flight-mini-badge aa77">AA 77 &bull; Boeing 757</span>
+            </div>
+            <h3 class="flight-mini-title">American Airlines 77</h3>
+            <div class="flight-mini-route">Washington (IAD) &rarr; Los &Aacute;ngeles (LAX)</div>
+            <p class="flight-mini-fact">Impacto en El Pent&aacute;gono a las 09:37 &bull; 64 personas a bordo.</p>
+            <button class="btn-flight-inspect btn-mini-inspect" data-flight="aa77" aria-label="Ver informaci&oacute;n del vuelo AA77">
+              <span>Ficha del vuelo &rarr;</span>
+            </button>
+          </article>
+
+          <!-- VUELO 4: UA93 -->
+          <article class="flight-mini-card" data-flight="ua93">
+            <div class="flight-mini-header">
+              <span class="flight-mini-badge ua93">UA 93 &bull; Boeing 757</span>
+            </div>
+            <h3 class="flight-mini-title">United Airlines 93</h3>
+            <div class="flight-mini-route">Newark (EWR) &rarr; San Francisco (SFO)</div>
+            <p class="flight-mini-fact">Ca&iacute;da en Shanksville, PA a las 10:03 tras revuelta heroica &bull; 44 personas.</p>
+            <button class="btn-flight-inspect btn-mini-inspect" data-flight="ua93" aria-label="Ver informaci&oacute;n del vuelo UA93">
+              <span>Ficha del vuelo &rarr;</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCION 6: LAS TORRES (SECCION PRINCIPAL CON EXACTAMENTE 4 HOTSPOTS) -->
+    <section class="section-padding towers-section" id="las-torres" aria-labelledby="heading-torres">
+      <div class="container">
+        <header class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Convergencia Multidisciplinar y Arquitectura Insignia</span>
+          <h2 class="section-title" id="heading-torres">LAS TORRES</h2>
+          <blockquote class="section-lead-quote">
+            &ldquo;Las Torres Gemelas no fueron solamente edificios. Fueron arquitectura, econom&iacute;a, ingenier&iacute;a, ciencia y sociedad concentradas en un mismo lugar.&rdquo;
+          </blockquote>
+          <p class="section-desc">Dise&ntilde;adas por el arquitecto Minoru Yamasaki y el ingeniero Leslie Robertson, las Torres Gemelas del World Trade Center revolucionaron la ingenier&iacute;a civil contempor&aacute;nea. Explora los 4 hotspots interactivos para profundizar en cada dimensi&oacute;n del conocimiento.</p>
+        </header>
+
+        <div class="towers-interactive-wrapper reveal-on-scroll">
+          <div class="towers-center-stage" id="towers-stage">
+            <img 
+              src="images/wtc-ground-1999.jpg" 
+              alt="Fotograf&iacute;a monumental y n&iacute;tida de las Torres Gemelas del World Trade Center tomada desde la plaza en 1999"
+              class="towers-bg-photo"
+              loading="lazy"
+              onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='wtc-ground-1999.jpg';}else{this.src='images/wtc-1995.jpg';}"
+            >
+            <div class="towers-stage-vignette" aria-hidden="true"></div>
+
+            <!-- HOTSPOT 01: HISTORIA -->
+            <button class="hotspot-pin hotspot-1" id="hotspot-1" aria-haspopup="dialog" aria-label="Hotspot 01: Historia &mdash; Por que cambio la historia mundial?">
+              <span class="pin-core">
+                01
+                <span class="pin-pulse-ring" aria-hidden="true"></span>
+              </span>
+              <span class="hotspot-label-pill">
+                <span class="label-title">01 &mdash; HISTORIA</span>
+                <span class="label-sub">&iquest;Por qu&eacute; cambi&oacute; la historia mundial?</span>
+              </span>
+            </button>
+
+            <!-- HOTSPOT 02: MATEMATICAS Y ECONOMIA -->
+            <button class="hotspot-pin hotspot-2" id="hotspot-2" aria-haspopup="dialog" aria-label="Hotspot 02: Matematicas y Economia &mdash; Los Numeros del Impacto">
+              <span class="pin-core">
+                02
+                <span class="pin-pulse-ring" aria-hidden="true"></span>
+              </span>
+              <span class="hotspot-label-pill">
+                <span class="label-title">02 &mdash; MATEM&Aacute;TICAS &amp; ECONOM&Iacute;A</span>
+                <span class="label-sub">Los N&uacute;meros del Impacto</span>
+              </span>
+            </button>
+
+            <!-- HOTSPOT 03: CIENCIAS NATURALES -->
+            <button class="hotspot-pin hotspot-3" id="hotspot-3" aria-haspopup="dialog" aria-label="Hotspot 03: Ciencias Naturales &mdash; Ciencia y Medio Ambiente">
+              <span class="pin-core">
+                03
+                <span class="pin-pulse-ring" aria-hidden="true"></span>
+              </span>
+              <span class="hotspot-label-pill">
+                <span class="label-title">03 &mdash; CIENCIAS NATURALES</span>
+                <span class="label-sub">Ciencia y Medio Ambiente</span>
+              </span>
+            </button>
+
+            <!-- HOTSPOT 04: INGENIERIA -->
+            <button class="hotspot-pin hotspot-4" id="hotspot-4" aria-haspopup="dialog" aria-label="Hotspot 04: Ingenieria &mdash; Como estaban construidas?">
+              <span class="pin-core">
+                04
+                <span class="pin-pulse-ring" aria-hidden="true"></span>
+              </span>
+              <span class="hotspot-label-pill">
+                <span class="label-title">04 &mdash; INGENIER&Iacute;A</span>
+                <span class="label-sub">&iquest;C&oacute;mo estaban construidas?</span>
+              </span>
+            </button>
+          </div>
+
+          <!-- Rejilla accesible de los 4 Hotspots para celulares y tabletas -->
+          <div class="hotspots-mobile-grid" aria-label="Seleccion accesible de disciplinas">
+            <button class="hotspot-mobile-card" id="btn-mobile-hs1">
+              <span class="pin-core">01</span>
+              <div>
+                <strong class="label-title">01 &mdash; HISTORIA</strong>
+                <span class="label-sub">&iquest;Por qu&eacute; cambi&oacute; la historia mundial?</span>
+              </div>
+            </button>
+
+            <button class="hotspot-mobile-card" id="btn-mobile-hs2">
+              <span class="pin-core">02</span>
+              <div>
+                <strong class="label-title">02 &mdash; MATEM&Aacute;TICAS &amp; ECONOM&Iacute;A</strong>
+                <span class="label-sub">Los N&uacute;meros del Impacto</span>
+              </div>
+            </button>
+
+            <button class="hotspot-mobile-card" id="btn-mobile-hs3">
+              <span class="pin-core">03</span>
+              <div>
+                <strong class="label-title">03 &mdash; CIENCIAS NATURALES</strong>
+                <span class="label-sub">Ciencia y Medio Ambiente</span>
+              </div>
+            </button>
+
+            <button class="hotspot-mobile-card" id="btn-mobile-hs4">
+              <span class="pin-core">04</span>
+              <div>
+                <strong class="label-title">04 &mdash; INGENIER&Iacute;A</strong>
+                <span class="label-sub">&iquest;C&oacute;mo estaban construidas?</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Vista previa inicial de 3 cifras clave (Hotspot 02) -->
+          <div class="towers-quick-stats">
+            <div class="quick-stat-item">
+              <span class="stat-number font-mono">417 m</span>
+              <span class="stat-caption">Altura monumental (WTC 1) &bull; 110 pisos</span>
+            </div>
+            <div class="quick-stat-item">
+              <span class="stat-number font-mono">50,000</span>
+              <span class="stat-caption">Trabajadores diarios de 26 pa&iacute;ses</span>
+            </div>
+            <div class="quick-stat-item">
+              <span class="stat-number font-mono">$10B+</span>
+              <span class="stat-caption">P&eacute;rdidas materiales directas en Manhattan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECCION 5: EL MUNDO DESPUES -->
+    <section class="section-padding world-after-section" id="mundo-despues" aria-labelledby="heading-mundo-despues">
+      <div class="container">
+        <header class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Transformaciones Globales</span>
+          <h2 class="section-title" id="heading-mundo-despues">EL MUNDO DESPU&Eacute;S</h2>
+          <blockquote class="section-lead-quote">
+            &ldquo;Nuevos paradigmas en seguridad, geopol&iacute;tica y vigilancia tecnol&oacute;gica.&rdquo;
+          </blockquote>
+        </header>
+
+        <div class="world-after-grid reveal-on-scroll">
+          <!-- 1. SEGURIDAD -->
+          <article class="world-card" data-pillar="seguridad">
+            <div class="world-card-media">
+              <img 
+                src="images/tsa-security.jpg" 
+                alt="Punto de control de seguridad aeroportuaria y agentes de la TSA" 
+                class="world-card-img"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="img-fallback-card" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <p>Seguridad Aeroportuaria TSA</p>
+              </div>
+              <div class="world-card-icon-tag">SEGURIDAD</div>
+            </div>
+            <div class="world-card-info">
+              <h3>Seguridad Aeroportuaria</h3>
+              <p>La aviaci&oacute;n civil transform&oacute; sus protocolos con esc&aacute;neres corporales, control biom&eacute;trico y puertas de cabina blindadas. La creaci&oacute;n de la TSA federaliz&oacute; los controles para garantizar que ning&uacute;n vuelo vuelva a ser vulnerado.</p>
+            </div>
+          </article>
+
+          <!-- 2. GEOPOLITICA -->
+          <article class="world-card" data-pillar="geopolitica">
+            <div class="world-card-media">
+              <img 
+                src="images/un-geopolitics.jpg" 
+                alt="Asamblea General de la ONU y diplomacia internacional" 
+                class="world-card-img"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="img-fallback-card" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                <p>Geopol&iacute;tica y Diplomacia</p>
+              </div>
+              <div class="world-card-icon-tag">GEOPOL&Iacute;TICA</div>
+            </div>
+            <div class="world-card-info">
+              <h3>Reconfiguraci&oacute;n Geopol&iacute;tica</h3>
+              <p>El orden internacional adopt&oacute; la doctrina de seguridad preventiva e intervenciones prolongadas en Oriente Medio. La OTAN invoc&oacute; por primera y &uacute;nica vez en su historia su cl&aacute;usula de defensa colectiva.</p>
+            </div>
+          </article>
+
+          <!-- 3. TECNOLOGIA -->
+          <article class="world-card" data-pillar="tecnologia">
+            <div class="world-card-media">
+              <img 
+                src="images/surveillance-tech.jpg" 
+                alt="C&aacute;maras de videovigilancia y tecnolog&iacute;a de control digital" 
+                class="world-card-img"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="img-fallback-card" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg>
+                <p>Vigilancia Tecnol&oacute;gica</p>
+              </div>
+              <div class="world-card-icon-tag">TECNOLOG&Iacute;A</div>
+            </div>
+            <div class="world-card-info">
+              <h3>Vigilancia y Big Data</h3>
+              <p>La Ley Patriota institucionaliz&oacute; la recolecci&oacute;n masiva de metadatos y el monitoreo digital de comunicaciones. El reconocimiento facial y las bases de datos integradas redefinieron la privacidad ciudadana.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCION 6: HUMANIZA LO QUE TOCAS (SECCION FINAL) -->
+    <section class="section-padding reflection-section" id="humaniza" aria-labelledby="heading-humaniza">
+      <div class="container">
+        <div class="reflection-container reveal-on-scroll">
+          <div class="reflection-media-wrapper">
+            <img 
+              src="images/flight93-tower-of-voices.jpg" 
+              alt="Monumento conmemorativo y paisaje de recogimiento en memoria de las v&iacute;ctimas" 
+              class="reflection-img"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="img-fallback-card" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+              <p>Espacio Conmemorativo y Memoria</p>
+            </div>
+          </div>
+
+          <div class="reflection-content-box">
+            <span class="section-subtitle">Dimensi&oacute;n &Eacute;tica y Humana</span>
+            <h2 class="section-title" id="heading-humaniza">HUMANIZA LO QUE TOCAS</h2>
+            
+            <blockquote class="reflection-quote">
+              <p>Detr&aacute;s de cada n&uacute;mero existe una persona.</p>
+              <p>Detr&aacute;s de cada edificio existe una historia.</p>
+              <p>Comprender la historia tambi&eacute;n significa comprender sus consecuencias humanas.</p>
+            </blockquote>
+
+            <div class="reflection-footer-note">
+              <span>PROYECTO DE INVESTIGACI&Oacute;N &bull; GIMNASIO VALLEGRANDE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PAGINA INSTITUCIONAL -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-inst-tag">PROYECTO DE INVESTIGACI&Oacute;N</span>
+          <h4>GIMNASIO VALLEGRANDE</h4>
+          <h5 class="footer-subbrand">D&Iacute;A CERO</h5>
+          <p>Micrositio educativo desarrollado como apoyo visual para presentaci&oacute;n acad&eacute;mica. Dise&ntilde;o visual, s&iacute;ntesis hist&oacute;rica y rigor conceptual.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Secciones del Proyecto</h4>
+          <ul class="footer-links-list">
+            <li><a href="#portada">1. Portada</a></li>
+            <li><a href="#antes-despues">2. Antes y Despu&eacute;s</a></li>
+            <li><a href="#el-ataque">3. El Ataque y los Vuelos</a></li>
+            <li><a href="#las-torres">4. Las Torres Gemelas</a></li>
+            <li><a href="#mundo-despues">5. El Mundo Despu&eacute;s</a></li>
+            <li><a href="#humaniza">6. Humaniza lo que Tocas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Fuentes Hist&oacute;ricas Consultadas</h4>
+          <ul class="footer-links-list">
+            <li><span>The 9/11 Commission Report (2004)</span></li>
+            <li><span>NIST NCSTAR 1 &mdash; WTC Investigation (2005)</span></li>
+            <li><span>National Archives &amp; Library of Congress</span></li>
+            <li><span>FEMA &amp; WTC Health Program</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; D&Iacute;A CERO &bull; Gimnasio Vallegrande &bull; Presentaci&oacute;n Escolar Interdisciplinaria.</p>
+        <p class="font-mono">HTML5 &bull; CSS3 &bull; JavaScript &bull; Dise&ntilde;o Responsive</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SISTEMA GLOBAL DE MODALES ACCESIBLES -->
+  <div class="modal-overlay" id="global-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <div class="modal-container" id="global-modal-container">
+      <header class="modal-header">
+        <div class="modal-header-text">
+          <span class="modal-category-badge" id="modal-category-badge">CATEGOR&Iacute;A</span>
+          <h3 id="modal-title">T&iacute;tulo del Modal</h3>
+          <p id="modal-subtitle">Subt&iacute;tulo o contexto tem&aacute;tico</p>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Cerrar ventana emergente">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </header>
+
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
