@@ -63,7 +63,7 @@
 
       <div class="hero-background-media" aria-hidden="true">
         <img 
-          src="images/wtc-aerial-2001.jpg" 
+          src="wtc-aerial-2001.jpg" 
           alt="Fotograf&iacute;a panor&aacute;mica del Bajo Manhattan y las Torres Gemelas del World Trade Center en marzo de 2001"
           class="hero-bg-img"
           loading="eager"
@@ -129,11 +129,11 @@
           <article class="comparison-card before-card reveal-on-scroll" aria-labelledby="title-card-antes">
             <div class="card-media-wrapper">
               <img 
-                src="images/wtc-1995.jpg" 
+                src="wtc-1995.jpg" 
                 alt="Fotograf&iacute;a hist&oacute;rica del World Trade Center antes del 11 de septiembre" 
                 class="card-historical-img"
                 loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='images/wtc-1995.jpg';}else{this.style.display='none'; if(this.nextElementSibling)this.nextElementSibling.style.display='flex';}"
               >
               <div class="img-fallback-card" style="display:none;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
@@ -187,11 +187,11 @@
           <article class="comparison-card after-card reveal-on-scroll" aria-labelledby="title-card-despues">
             <div class="card-media-wrapper">
               <img 
-                src="images/pentagon-aerial.jpg" 
+                src="pentagon-aerial.jpg" 
                 alt="Fotograf&iacute;a a&eacute;rea de los da&ntilde;os estructurales y transformaci&oacute;n de la seguridad tras el 11 de septiembre" 
                 class="card-historical-img"
                 loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='images/pentagon-aerial.jpg';}else{this.style.display='none'; if(this.nextElementSibling)this.nextElementSibling.style.display='flex';}"
               >
               <div class="img-fallback-card" style="display:none;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -490,7 +490,7 @@
         <div class="towers-interactive-wrapper reveal-on-scroll">
           <div class="towers-center-stage" id="towers-stage">
             <img 
-              src="images/wtc-ground-1999.jpg" 
+              src="wtc-ground-1999.jpg" 
               alt="Fotograf&iacute;a monumental y n&iacute;tida de las Torres Gemelas del World Trade Center tomada desde la plaza en 1999"
               class="towers-bg-photo"
               loading="lazy"
@@ -616,11 +616,11 @@
           <article class="world-card" data-pillar="seguridad">
             <div class="world-card-media">
               <img 
-                src="images/tsa-security.jpg" 
+                src="tsa-security.jpg" 
                 alt="Punto de control de seguridad aeroportuaria y agentes de la TSA" 
                 class="world-card-img"
                 loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='images/tsa-security.jpg';}else{this.style.display='none'; if(this.nextElementSibling)this.nextElementSibling.style.display='flex';}"
               >
               <div class="img-fallback-card" style="display:none;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -638,11 +638,11 @@
           <article class="world-card" data-pillar="geopolitica">
             <div class="world-card-media">
               <img 
-                src="images/un-geopolitics.jpg" 
+                src="un-geopolitics.jpg" 
                 alt="Asamblea General de la ONU y diplomacia internacional" 
                 class="world-card-img"
                 loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='images/un-geopolitics.jpg';}else{this.style.display='none'; if(this.nextElementSibling)this.nextElementSibling.style.display='flex';}"
               >
               <div class="img-fallback-card" style="display:none;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
@@ -660,11 +660,11 @@
           <article class="world-card" data-pillar="tecnologia">
             <div class="world-card-media">
               <img 
-                src="images/surveillance-tech.jpg" 
+                src="surveillance-tech.jpg" 
                 alt="C&aacute;maras de videovigilancia y tecnolog&iacute;a de control digital" 
                 class="world-card-img"
                 loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='images/surveillance-tech.jpg';}else{this.style.display='none'; if(this.nextElementSibling)this.nextElementSibling.style.display='flex';}"
               >
               <div class="img-fallback-card" style="display:none;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg>
@@ -687,11 +687,11 @@
         <div class="reflection-container reveal-on-scroll">
           <div class="reflection-media-wrapper">
             <img 
-              src="images/flight93-tower-of-voices.jpg" 
+              src="flight93-tower-of-voices.jpg" 
               alt="Monumento conmemorativo y paisaje de recogimiento en memoria de las v&iacute;ctimas" 
               class="reflection-img"
               loading="lazy"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='images/flight93-tower-of-voices.jpg';}else{this.style.display='none'; if(this.nextElementSibling)this.nextElementSibling.style.display='flex';}"
             >
             <div class="img-fallback-card" style="display:none;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
@@ -781,3 +781,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+

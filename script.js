@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'Contexto geopol&iacute;tico, ataque coordinado y respuesta internacional',
       `
       <div class="modal-hotspot-media">
-        <img src="images/wtc-history.jpg" alt="Impacto historico en el World Trade Center" class="modal-preview-img" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='wtc-history.jpg';}else{this.src='wtc-1995.jpg';}">
+        <img src="wtc-history.jpg" alt="Impacto historico en el World Trade Center" class="modal-preview-img" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='wtc-history.jpg';}else{this.src='wtc-1995.jpg';}">
       </div>
       <div class="modal-hotspot-facts">
         <div class="modal-fact-item">
@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'Part&iacute;culas en suspensi&oacute;n, contaminaci&oacute;n alcalina y salud humana',
       `
       <div class="modal-hotspot-media">
-        <img src="images/wtc-dust-plume.jpg" alt="Pluma de polvo y humo sobre la Zona Cero" class="modal-preview-img" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='wtc-dust-plume.jpg';}else{this.src='pentagon-aerial.jpg';}">
+        <img src="wtc-dust-plume.jpg" alt="Pluma de polvo y humo sobre la Zona Cero" class="modal-preview-img" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='wtc-dust-plume.jpg';}else{this.src='pentagon-aerial.jpg';}">
       </div>
       <div class="modal-hotspot-facts">
         <div class="modal-fact-item">
@@ -585,7 +585,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'N&uacute;cleo central, fachada perimetral, pisos y colapso t&eacute;rmico',
       `
       <div class="modal-hotspot-media">
-        <img src="images/wtc-structure-drawing.png" alt="Diagrama estructural del World Trade Center" class="modal-preview-img" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='wtc-structure-drawing.png';}">
+        <img src="wtc-structure-drawing.png" alt="Diagrama estructural del World Trade Center" class="modal-preview-img" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='wtc-structure-drawing.png';}">
       </div>
       <div class="modal-hotspot-facts">
         <div class="modal-fact-item">
@@ -650,3 +650,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });;
+
